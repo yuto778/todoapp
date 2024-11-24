@@ -1,12 +1,9 @@
-import Sidebar from "@/components/Sidebar";
-import Topbar from "@/components/Topbar";
-import React from "react";
+import Bar from "@/components/Bar";
 
 const page = () => {
   return (
     <>
-      <Topbar />
-      <Sidebar />
+      <Bar />
     </>
   );
 };
