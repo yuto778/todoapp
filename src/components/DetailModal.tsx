@@ -26,9 +26,10 @@ const DetailModal: React.FC<DetailProps> = ({ close, phrase }) => {
           >
             <X />
           </div>
-          <h2>タスク名 : {phrase}</h2>
-          <h2>重要度</h2>
-          <h2>メモ</h2>
+          <h2 className="text-xl font-bold">タスク名 : {phrase}</h2>
+          <h2 className="text-xl font-bold">期日 : </h2>
+          <h2 className="text-xl font-bold">重要度</h2>
+          <h2 className="text-xl font-bold">メモ :</h2>
           <div className="relative flex justify-center">
             <Button className="self-center">完了！</Button>
             <div className="absolute p-2 rounded-full right-0 bg-red-600/70 hover:scale-110 transition cursor-pointer ">

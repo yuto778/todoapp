@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "SignUp",
 };
 
-const page = () => {
+const Page = () => {
   return (
     <div className="h-screen w-screen bg-yellow-200/40 flex flex-row lg:flex-col ">
       <LoginTop />
@@ -35,4 +35,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

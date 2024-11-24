@@ -1,6 +1,6 @@
 import Bar from "@/components/Bar";
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <Bar />
@@ -8,4 +8,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
