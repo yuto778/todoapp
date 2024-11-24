@@ -7,7 +7,7 @@ const Topbar = async () => {
         <h2 className="font-bold text-2xl">Todo</h2>
         <span className="flex-1"></span>
         <div className="flex gap-10 items-center">
-          <h2 className="font-thin text-xl">yuto778</h2>
+          <h2 className="">プロフィール</h2>
           <Button variant={"ghost"}>ログアウト</Button>
         </div>
       </div>
