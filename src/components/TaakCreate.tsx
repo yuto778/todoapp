@@ -1,16 +1,14 @@
 "use client";
 
-import React from "react";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 import BackPage from "./BackPage";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
