@@ -15,6 +15,7 @@ const Login = () => {
     <>
       <main className="flex-1 flex items-center justify-center py-16">
         <div className="flex flex-col   w-1/2 rounded-lg bg-slate-400/50 space-y-10 px-5 py-10">
+          <h2 className="font-bold text-xl">ログイン</h2>
           <Input placeholder="メールアドレス" />
           <Input placeholder="パスワード" />
           <Button variant={"outline"} className="self-center" onClick={success}>

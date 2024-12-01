@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 const Topbar = async () => {
@@ -7,8 +8,12 @@ const Topbar = async () => {
         <h2 className="font-bold text-2xl">Todo</h2>
         <span className="flex-1"></span>
         <div className="flex gap-10 items-center">
-          <h2 className="">プロフィール</h2>
-          <Button variant={"ghost"}>ログアウト</Button>
+          <Link href={"/"}>ダッシュボード</Link>
+
+          <Button variant={"ghost"} className="relative">
+            ログアウト
+            <Link href={"/login"} className="absolute inset-0 "></Link>
+          </Button>
         </div>
       </div>
     </>

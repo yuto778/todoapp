@@ -12,10 +12,11 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <div className="h-screen w-screen bg-yellow-200/40 flex flex-row lg:flex-col ">
+    <div className="h-screen w-screen bg-yellow-200/40 flex flex-col ">
       <LoginTop />
       <main className="flex-1 flex items-center justify-center py-16">
         <div className="flex flex-col   w-1/2 rounded-lg bg-slate-400/50 space-y-10 px-5 py-10">
+          <h2 className="font-bold text-2xl ">新規登録</h2>
           <Input placeholder="ユーザー名" />
           <Input placeholder="メールアドレス" />
           <Input placeholder="パスワード" />

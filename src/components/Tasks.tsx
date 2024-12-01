@@ -14,9 +14,9 @@ const Tasks = () => {
         {/* 検索窓フィルターにしたい */}
         <Input className="w-1/2" placeholder="検索できます" />
         <div className="absolute right-10 top-15  ">
-          <div className="relative bg-gray-200/60 p-2 rounded-full ">
+          <div className="relative bg-gray-200 p-2 rounded-full ">
             <PlusCircleIcon />
-            <Link href={"/test"} className="inset-0 absolute"></Link>
+            <Link href={"/create"} className="inset-0 absolute"></Link>
           </div>
         </div>
         <div

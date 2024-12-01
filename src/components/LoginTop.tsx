@@ -2,8 +2,8 @@ import React from "react";
 
 const LoginTop = () => {
   return (
-    <div className="w-full bg-gray-200 h-16  hidden  items-center  lg:flex px-10 ">
-      LoginTop
+    <div className="w-full bg-gray-200 h-16  items-center flex px-10  ">
+      <h2 className="font-bold text-2xl ">ManagementApp</h2>
     </div>
   );
 };
