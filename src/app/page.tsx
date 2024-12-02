@@ -22,6 +22,9 @@ export default async function Home() {
 
     return redirect("/login");
   }
+
+  console.log(user);
+
   return (
     <>
       <div className="h-screen w-screen bg-yellow-200/40 flex flex-row lg:flex-col ">
