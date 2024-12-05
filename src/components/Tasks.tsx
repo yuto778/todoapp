@@ -23,7 +23,7 @@ const Tasks = () => {
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-10 overflow-auto p-5
           "
         >
-          {[...Array(100)].map((_, index) => (
+          {[...Array(5)].map((_, index) => (
             <TaskDetail id={index} key={index} />
           ))}
         </div>

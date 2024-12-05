@@ -1,8 +1,7 @@
 import Bar from "@/components/Bar";
 import Tasks from "@/components/Tasks";
+import { GetUser } from "@/data/GetUser";
 import { Metadata } from "next";
-import { createClient } from "../../lib/server";
-import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "ダッシュボード",
@@ -10,18 +9,20 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const supabase = await createClient();
+  // const supabase = await createClient();
 
-  const {
-    data: { user },
-    error,
-  } = await (await supabase).auth.getUser();
+  // const {
+  //   data: { user },
+  //   error,
+  // } = await supabase.auth.getUser();
 
-  if (!user || error) {
-    console.log("userがないためloginへリダイレクトします");
+  // if (!user || error) {
+  //   console.log("userがないためloginへリダイレクトします");
 
-    return redirect("/login");
-  }
+  //   return redirect("/login");
+  // }
+
+  const user = await GetUser();
 
   console.log(user);
 
