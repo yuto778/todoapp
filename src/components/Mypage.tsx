@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import BackPage from "./BackPage";
 import UserNameChangeModal from "./UserNameChangeModal";
+import EmailChangeModal from "./EmailChangeModal";
 
 interface MypageProps {
   data: {
@@ -14,7 +15,7 @@ interface MypageProps {
 
 const Mypage: React.FC<MypageProps> = ({ data }) => {
   const [UserNameModal, setUserNameModal] = useState<boolean>(false);
-  // const [EmailModal, setEmailModal] = useState<boolean>(false);
+  const [EmailModal, setEmailModal] = useState<boolean>(false);
   return (
     <>
       <div className="p-10 w-full flex-1 flex items-center  flex-col relative ">
@@ -41,9 +42,19 @@ const Mypage: React.FC<MypageProps> = ({ data }) => {
           </div>
           <div className="flex flex-col gap-2">
             <h2>メールアドレス</h2>
-            <div className=" p-3  w-full bg-white rounded-xl  shadow-lg cursor-pointer">
+            <div
+              className=" p-3  w-full bg-white rounded-xl  shadow-lg cursor-pointer"
+              onClick={() => setEmailModal(true)}
+            >
               <h2 className="pl-2 text-xl font-normal">{data?.Email}</h2>
             </div>
+            {EmailModal && (
+              <EmailChangeModal
+                close={setEmailModal}
+                Email={data!.Email}
+                Id={data!.id}
+              />
+            )}
           </div>
         </div>
       </div>

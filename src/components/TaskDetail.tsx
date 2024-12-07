@@ -17,7 +17,7 @@ const TaskDetail: React.FC<taskdetailprops> = ({ id }) => {
     <>
       <div
         key={id}
-        className="w-full flex items-center justify-center bg-red-300 rounded-lg h-24 hover:scale-105 transition cursor-pointer shadow-2xl hover:shadow-none"
+        className="w-full flex items-center justify-center bg-red-300 rounded-lg h-24 min-h-24 hover:scale-105 transition cursor-pointer shadow-2xl hover:shadow-none"
         onClick={modalopen}
       >
         hogehoge
