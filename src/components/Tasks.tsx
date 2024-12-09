@@ -24,7 +24,7 @@ const Tasks = () => {
             <h2 className="text-lg font-bold">重要</h2>
             <div className="flex-1  flex flex-col gap-8 pt-5 pb-10 px-5    overflow-auto">
               {[...Array(1)].map((_, i) => (
-                <TaskDetail id={i} key={i} />
+                <TaskDetail id={i} key={i} className={"bg-red-500/60"} />
               ))}
             </div>
           </div>
@@ -32,15 +32,15 @@ const Tasks = () => {
             <h2 className="text-lg font-bold"> 中</h2>
             <div className="flex-1  flex flex-col gap-8 pt-5 pb-10 px-5   overflow-auto">
               {[...Array(6)].map((_, i) => (
-                <TaskDetail id={i} key={i} />
+                <TaskDetail id={i} key={i} className="bg-orange-500/60" />
               ))}
             </div>
           </div>
-          <div className="bg-yellow-100 w-1/3 rounded-md h-full  flex flex-col px-10 pt-5 shadow-xl  overflow-hidden     ">
+          <div className="bg-blue-200 w-1/3 rounded-md h-full  flex flex-col px-10 pt-5 shadow-xl  overflow-hidden     ">
             <h2 className="text-lg font-bold">低い</h2>
             <div className="flex-1  flex flex-col gap-8 pt-5 pb-10  px-5  overflow-auto">
               {[...Array(30)].map((_, i) => (
-                <TaskDetail id={i} key={i} />
+                <TaskDetail id={i} key={i} className="bg-blue-500/60" />
               ))}
             </div>
           </div>

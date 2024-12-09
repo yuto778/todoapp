@@ -1,12 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import DetailModal from "./DetailModal";
+import { cn } from "@/lib/utils";
 
 type taskdetailprops = {
   id: number;
+  className?: string;
 };
 
-const TaskDetail: React.FC<taskdetailprops> = ({ id }) => {
+const TaskDetail: React.FC<taskdetailprops> = ({ id, className }) => {
   const [DetailModalopen, setDetailModalopen] = useState<boolean>(false);
 
   const modalopen = () => {
@@ -17,7 +19,10 @@ const TaskDetail: React.FC<taskdetailprops> = ({ id }) => {
     <>
       <div
         key={id}
-        className="w-full flex items-center justify-center bg-red-300 rounded-lg h-24 min-h-24 hover:scale-105 transition cursor-pointer shadow-lg hover:shadow-none"
+        className={cn(
+          "w-full flex items-center justify-center rounded-lg h-24 min-h-24 hover:scale-105 transition cursor-pointer shadow-lg hover:shadow-none",
+          className
+        )}
         onClick={modalopen}
       >
         hogehoge
