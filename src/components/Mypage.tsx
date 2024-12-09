@@ -48,13 +48,14 @@ const Mypage: React.FC<MypageProps> = ({ data }) => {
             >
               <h2 className="pl-2 text-xl font-normal">{data?.Email}</h2>
             </div>
-            {EmailModal && (
+            <h3 className="self-center">メールアドレスは変更できません！</h3>
+            {/* {EmailModal && (
               <EmailChangeModal
                 close={setEmailModal}
                 Email={data!.Email}
                 Id={data!.id}
               />
-            )}
+            )} */}
           </div>
         </div>
       </div>

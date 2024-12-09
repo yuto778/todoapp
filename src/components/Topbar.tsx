@@ -16,7 +16,9 @@ const Topbar = async () => {
   return (
     <>
       <div className="w-full bg-gray-200 h-16  hidden  items-center  lg:flex px-10 ">
-        <h2 className="font-bold text-2xl">Todo</h2>
+        <Link href={"/"} className="font-bold text-2xl">
+          Todo
+        </Link>
         <span className="flex-1"></span>
         <h2>{data?.Email}</h2>
         <div className="flex gap-10 items-center">

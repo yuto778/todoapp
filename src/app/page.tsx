@@ -9,19 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  // const supabase = await createClient();
-
-  // const {
-  //   data: { user },
-  //   error,
-  // } = await supabase.auth.getUser();
-
-  // if (!user || error) {
-  //   console.log("userがないためloginへリダイレクトします");
-
-  //   return redirect("/login");
-  // }
-
   const user = await GetUser();
 
   console.log(user);
