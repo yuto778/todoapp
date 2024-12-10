@@ -41,8 +41,9 @@ const Mypage: React.FC<MypageProps> = ({ data }) => {
           </div>
           <div className="flex flex-col gap-2">
             <h2>メールアドレス</h2>
-            <div className=" p-3  w-full bg-white rounded-xl  shadow-lg cursor-pointer">
+            <div className=" p-3  w-full bg-white rounded-xl  shadow-lg cursor-not-allowed relative overflow-hidden">
               <h2 className="pl-2 text-xl font-normal">{data?.Email}</h2>
+              <div className="bg-gray-400/50 z-20 absolute inset-0"></div>
             </div>
             <h3 className="self-center">メールアドレスは変更できません！</h3>
             {/* {EmailModal && (

@@ -39,10 +39,9 @@ const TaakCreate = () => {
                 </SelectTrigger>
                 <SelectContent className="text-xl">
                   <SelectGroup>
-                    <SelectItem value="apple">低</SelectItem>
-                    <SelectItem value="banana">中</SelectItem>
-                    <SelectItem value="blueberry">高</SelectItem>
-                    <SelectItem value="grapes">最高</SelectItem>
+                    <SelectItem value="apple">普通</SelectItem>
+                    <SelectItem value="banana">重要</SelectItem>
+                    <SelectItem value="blueberry">最重要</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
