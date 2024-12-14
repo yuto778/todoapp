@@ -28,6 +28,7 @@ import { TaskCreateFunction } from "@/actions/TaskCreateFunction";
 import toast, { Toaster } from "react-hot-toast";
 import React from "react";
 import { User } from "@supabase/supabase-js";
+import { useRouter } from "next/navigation";
 
 interface TaskCreateProps {
   user: User | null;
@@ -45,6 +46,7 @@ const TaskCreateformSchema = z.object({
 export type TaskCreateFormSchemaType = z.infer<typeof TaskCreateformSchema>;
 
 const TaakCreate: React.FC<TaskCreateProps> = ({ user }) => {
+  const router = useRouter();
   const TaskCreateform = useForm<TaskCreateFormSchemaType>({
     resolver: zodResolver(TaskCreateformSchema),
     defaultValues: {
@@ -65,6 +67,7 @@ const TaakCreate: React.FC<TaskCreateProps> = ({ user }) => {
 
     toast.success("成功しました", { id: loadingId });
     TaskCreateform.reset();
+    router.prefetch("/");
   };
   return (
     <>

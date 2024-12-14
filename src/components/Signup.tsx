@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { z } from "zod";
+import { delay } from "@/data/delay";
 
 const SignupformSchema = z.object({
   username: z.string().min(2).max(50),
@@ -55,6 +56,7 @@ const Signup = () => {
         }
         toast.success("新規登録成功⚡️", { id: signupId });
         SignUpform.reset();
+        await delay(500);
         router.push("/login");
       } catch (e) {
         toast.error("catchでエラー", { id: signupId });

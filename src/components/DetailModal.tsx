@@ -6,6 +6,7 @@ import { Trash2Icon, X } from "lucide-react";
 import { TaskCompleteFunction } from "@/actions/TaskCompleteFunction";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { delay } from "@/data/delay";
 
 type DetailProps = {
   close: React.Dispatch<React.SetStateAction<boolean>>;
@@ -36,6 +37,8 @@ const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
       }
 
       toast.success("成功したよ", { id: loadingId });
+
+      await delay(1500);
 
       close(false);
       router.refresh();

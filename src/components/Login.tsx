@@ -18,6 +18,7 @@ import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { z } from "zod";
 import { LogInFunction } from "@/actions/LogInFunction";
+import { delay } from "@/data/delay";
 
 const LoginformSchema = z.object({
   Email: z.string().email(),
@@ -43,6 +44,8 @@ const Login = () => {
     try {
       await LogInFunction(values);
       toast.success("ログイン成功だよ", { id: LoginId });
+
+      await delay(1500);
       router.push("/");
     } catch (e) {
       toast.error("catchでログイン失敗だよ", { id: LoginId });

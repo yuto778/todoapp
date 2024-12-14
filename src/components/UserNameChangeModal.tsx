@@ -18,6 +18,7 @@ import {
 } from "./ui/form";
 import { UpdateUserNameFunction } from "@/actions/UpdateUserNameFunction";
 import toast, { Toaster } from "react-hot-toast";
+import { delay } from "@/data/delay";
 
 interface UserNameChangeModalProps {
   close: React.Dispatch<React.SetStateAction<boolean>>;
@@ -52,6 +53,7 @@ const UserNameChangeModal: React.FC<UserNameChangeModalProps> = ({
     try {
       await UpdateUserNameFunction(values, Id);
       toast.success("ユーザーネームの更新に成功", { id: UpdateId });
+      await delay(1000);
       close(false);
       router.push("/mypage");
     } catch (error) {
