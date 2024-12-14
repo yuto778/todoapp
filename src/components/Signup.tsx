@@ -12,13 +12,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { delay } from "@/data/delay";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { z } from "zod";
-import { delay } from "@/data/delay";
 
 const SignupformSchema = z.object({
   username: z.string().min(2).max(50),
@@ -66,7 +66,6 @@ const Signup = () => {
   };
   return (
     <>
-      <Toaster />
       <main className="flex-1 flex items-center justify-center ">
         <div className="flex flex-col w-1/2 rounded-lg bg-slate-400/50 space-y-5 px-10 py-10">
           <Form {...SignUpform}>

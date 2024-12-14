@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
+import { LogInFunction } from "@/actions/LogInFunction";
 import {
   Form,
   FormControl,
@@ -13,12 +14,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { delay } from "@/data/delay";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { z } from "zod";
-import { LogInFunction } from "@/actions/LogInFunction";
-import { delay } from "@/data/delay";
 
 const LoginformSchema = z.object({
   Email: z.string().email(),
@@ -55,7 +55,6 @@ const Login = () => {
 
   return (
     <>
-      <Toaster />
       <main className="flex-1 flex items-center justify-center py-16">
         <div className="flex flex-col   w-1/2 rounded-lg bg-slate-400/50 space-y-10 px-5 py-10">
           <Form {...LogInUpform}>

@@ -19,7 +19,7 @@ const Mypage: React.FC<MypageProps> = ({ data }) => {
     <>
       <div className="p-10 pb-28 w-full flex-1 flex items-center  flex-col relative ">
         <BackPage className="top-10 left-10" />
-        <div className="h-full w-1/2 flex flex-col  bg-red-300 shadow-lg rounded-lg  p-10 space-y-16">
+        <div className="h-full w-1/2 flex flex-col  bg-gray-400/50 shadow-lg rounded-lg  p-10 space-y-16 animate-opacity">
           <h2 className="text-xl font-bold underline underline-offset-4">
             マイページ
           </h2>

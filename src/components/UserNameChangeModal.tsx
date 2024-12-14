@@ -1,13 +1,15 @@
 "use client";
 
-import { X } from "lucide-react";
-import React from "react";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { z } from "zod";
-import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { UpdateUserNameFunction } from "@/actions/UpdateUserNameFunction";
+import { delay } from "@/data/delay";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import React from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { z } from "zod";
+import { Button } from "./ui/button";
 import {
   Form,
   FormControl,
@@ -16,9 +18,7 @@ import {
   FormLabel,
   FormMessage,
 } from "./ui/form";
-import { UpdateUserNameFunction } from "@/actions/UpdateUserNameFunction";
-import toast, { Toaster } from "react-hot-toast";
-import { delay } from "@/data/delay";
+import { Input } from "./ui/input";
 
 interface UserNameChangeModalProps {
   close: React.Dispatch<React.SetStateAction<boolean>>;
@@ -63,7 +63,6 @@ const UserNameChangeModal: React.FC<UserNameChangeModalProps> = ({
   };
   return (
     <>
-      <Toaster />
       <div
         className="fixed inset-0 bg-black bg-opacity-85 flex items-center justify-center z-50"
         onClick={() => close(false)}

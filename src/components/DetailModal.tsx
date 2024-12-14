@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
-import { Button } from "./ui/button";
-import { Trash2Icon, X } from "lucide-react";
 import { TaskCompleteFunction } from "@/actions/TaskCompleteFunction";
-import toast, { Toaster } from "react-hot-toast";
-import { useRouter } from "next/navigation";
 import { delay } from "@/data/delay";
+import { Trash2Icon, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import React from "react";
+import toast from "react-hot-toast";
+import { Button } from "./ui/button";
 
 type DetailProps = {
   close: React.Dispatch<React.SetStateAction<boolean>>;
@@ -49,9 +49,8 @@ const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
   };
   return (
     <>
-      <Toaster />
       <div
-        className="fixed inset-0 bg-black bg-opacity-85 flex items-center justify-center z-50"
+        className="fixed inset-0 bg-black bg-opacity-85 flex items-center justify-center z-50 animate-opacity"
         onClick={() => close(false)}
       >
         <div

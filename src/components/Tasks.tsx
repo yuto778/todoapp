@@ -42,15 +42,15 @@ const Tasks: React.FC<Tasks> = ({ todosData }) => {
         <h2 className="font-bold text-2xl ">Tasks</h2>
         {/* 検索窓フィルターにしたい */}
         {/* <Input className="w-1/2" placeholder="検索できます" /> */}
-        <div className="absolute right-10 top-15  ">
+        <div className="absolute right-10 top-15 animate-opacity hover:scale-110 transition  ">
           <div className="relative bg-gray-200 p-2 rounded-full ">
             <PlusCircleIcon />
             <Link href={"/create"} className="inset-0 absolute"></Link>
           </div>
         </div>
 
-        <div className="flex-1 flex w-full pt-5 pb-10 gap-10 overflow-hidden">
-          <div className="bg-red-200 rounded-md w-1/3 flex flex-col pt-5 px-10">
+        <div className="flex-1 flex w-full pt-5 pb-10 gap-10 overflow-hidden ">
+          <div className="bg-red-200 rounded-md w-1/3 flex flex-col pt-5 px-10 animate-opacity">
             <h2 className="text-lg font-bold">最重要</h2>
             <div className="flex-1  flex flex-col gap-8 pt-5 pb-10 px-5    overflow-auto">
               {veryimportant.length === 0 ? (
@@ -67,7 +67,7 @@ const Tasks: React.FC<Tasks> = ({ todosData }) => {
               )}
             </div>
           </div>
-          <div className="bg-orange-200 rounded-md w-1/3 flex flex-col px-10 pt-5 shadow-xl overflow-hidden">
+          <div className="bg-orange-200 rounded-md w-1/3 flex flex-col px-10 pt-5 shadow-xl overflow-hidden animate-opacity">
             <h2 className="text-lg font-bold">重要</h2>
             <div className="flex-1  flex flex-col gap-8 pt-5 pb-10 px-5   overflow-auto">
               {important.length === 0 ? (
@@ -84,7 +84,7 @@ const Tasks: React.FC<Tasks> = ({ todosData }) => {
               )}
             </div>
           </div>
-          <div className="bg-blue-200 w-1/3 rounded-md h-full  flex flex-col px-10 pt-5 shadow-xl  overflow-hidden     ">
+          <div className="bg-blue-200 w-1/3 rounded-md h-full  flex flex-col px-10 pt-5 shadow-xl  overflow-hidden  animate-opacity    ">
             <h2 className="text-lg font-bold">普通</h2>
             <div className="flex-1  flex flex-col gap-8 pt-5 pb-10  px-5  overflow-auto">
               {normal.length === 0 ? (

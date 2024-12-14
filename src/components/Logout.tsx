@@ -18,7 +18,7 @@ const Logout = () => {
   };
 
   return (
-    <Button variant={"ghost"} className="relative" onClick={handleLogout}>
+    <Button variant="outline" className="relative" onClick={handleLogout}>
       ログアウト
       <Link href={"/login"} className="absolute inset-0 "></Link>
     </Button>

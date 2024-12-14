@@ -15,11 +15,11 @@ const Topbar = async () => {
         <div className="flex gap-10 items-center">
           {/* <h2>{data?.Email}</h2> */}
 
-          <Button className="relative " variant={"outline"}>
+          <Button className="relative " variant="ghost">
             ダッシュボード
             <Link href={"/"} className="absolute inset-0"></Link>
           </Button>
-          <Button className="relative" variant={"outline"}>
+          <Button className="relative " variant="ghost">
             マイページ
             <Link href={"/mypage"} className="absolute inset-0"></Link>
           </Button>

@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 
+import { TaskCreateFunction } from "@/actions/TaskCreateFunction";
 import {
   Select,
   SelectContent,
@@ -23,12 +24,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { TaskCreateFunction } from "@/actions/TaskCreateFunction";
-import toast, { Toaster } from "react-hot-toast";
-import React from "react";
 import { User } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
+import React from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 interface TaskCreateProps {
   user: User | null;
@@ -71,10 +71,9 @@ const TaakCreate: React.FC<TaskCreateProps> = ({ user }) => {
   };
   return (
     <>
-      <Toaster />
       <main className="p-10 w-full flex-1 flex items-center  flex-col relative ">
         <BackPage className={"top-10 left-10 "} />
-        <div className="h-full w-1/2 flex flex-col  bg-red-300 shadow-lg rounded-lg  p-10 space-y-10">
+        <div className="h-full w-1/2 flex flex-col  bg-slate-400/50 shadow-lg rounded-lg  p-10 space-y-10 animate-opacity">
           <Form {...TaskCreateform}>
             <form
               onSubmit={TaskCreateform.handleSubmit(TaskCreateonSubmit)}
@@ -124,7 +123,7 @@ const TaakCreate: React.FC<TaskCreateProps> = ({ user }) => {
                       <FormControl>
                         <Select {...field} onValueChange={field.onChange}>
                           <SelectTrigger className="">
-                            <SelectValue placeholder="重要度" />
+                            <SelectValue placeholder="" />
                           </SelectTrigger>
                           <SelectContent className="text-xl">
                             <SelectGroup>

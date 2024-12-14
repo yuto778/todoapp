@@ -30,7 +30,7 @@ const TaskDetail: React.FC<taskdetailprops> = ({ id, className, task }) => {
       <div
         key={id}
         className={cn(
-          "w-full flex  items-center justify-center rounded-lg h-24 min-h-24 hover:scale-105 transition cursor-pointer shadow-lg hover:shadow-none relative",
+          "w-full flex  items-center justify-center rounded-lg h-24 min-h-24 hover:scale-105 transition cursor-pointer shadow-lg hover:shadow-none relative animate-slide-in-left",
           className
         )}
         onClick={modalopen}
