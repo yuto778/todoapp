@@ -52,6 +52,47 @@ export type Database = {
         }
         Relationships: []
       }
+      todos: {
+        Row: {
+          completed: boolean
+          created_at: string
+          due_date: string
+          id: number
+          memo: string | null
+          priority: number
+          title: string
+          user_id: string
+        }
+        Insert: {
+          completed?: boolean
+          created_at?: string
+          due_date: string
+          id?: number
+          memo?: string | null
+          priority: number
+          title: string
+          user_id?: string
+        }
+        Update: {
+          completed?: boolean
+          created_at?: string
+          due_date?: string
+          id?: number
+          memo?: string | null
+          priority?: number
+          title?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "public_todos_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "Users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       Users: {
         Row: {
           created_at: string
