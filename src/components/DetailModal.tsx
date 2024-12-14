@@ -22,7 +22,7 @@ type DetailProps = {
   };
 };
 
-const DetailModal: React.FC<DetailProps> = ({ close, phrase, task }) => {
+const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
   const router = useRouter();
 
   const completehandle = async () => {
@@ -41,6 +41,7 @@ const DetailModal: React.FC<DetailProps> = ({ close, phrase, task }) => {
       router.refresh();
     } catch (error) {
       toast.error("エラーが発生しました", { id: loadingId });
+      console.log(error);
     }
   };
   return (
