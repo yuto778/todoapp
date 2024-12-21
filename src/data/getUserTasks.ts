@@ -10,7 +10,7 @@ export const getUserTasks = async (userId: string) => {
       .from("todos")
       .select("*")
       .eq("user_id", userId)
-      .order("created_at", { ascending: false });
+      .order("due_date", { ascending: false });
 
     if (!data || error) {
       console.log("データの取得に失敗した", error);
