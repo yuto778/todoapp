@@ -192,6 +192,7 @@ const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
                 </Button>
               ) : (
                 <Button
+                  type="button"
                   className="self-center bg-red-600 hover:bg-red-800
                   "
                   onClick={completehandle}
