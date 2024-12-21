@@ -7,7 +7,7 @@ const Topbar = async () => {
 
   return (
     <>
-      <div className="w-full bg-gray-200 h-16  hidden  items-center  lg:flex px-10 ">
+      <div className="w-full bg-gray-200 h-16  hidden  items-center  md:flex px-10 ">
         <Link href={"/"} className="font-bold text-2xl">
           Todos
         </Link>

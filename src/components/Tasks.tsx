@@ -49,12 +49,14 @@ const Tasks: React.FC<Tasks> = ({ todosData }) => {
           </div>
         </div>
 
-        <div className="flex-1 flex w-full pt-5 pb-10 gap-10 overflow-hidden ">
-          <div className="bg-red-200 rounded-md w-1/3 flex flex-col pt-5 px-10 animate-opacity">
-            <h2 className="text-lg font-bold">最重要</h2>
-            <div className="flex-1  flex flex-col gap-8 pt-5 pb-10 px-5    overflow-auto">
+        <div className="flex-1 flex-col flex md:flex-row w-full pt-5 pb-10 md:gap-10 space-y-16 md:space-y-0  overflow-hidden ">
+          <div className="bg-red-200 rounded-md md:w-1/3 w-full flex flex-col pt-5 md:px-10 px-3 animate-opacity">
+            <h2 className="text-lg font-bold">最重要 {veryimportant.length}</h2>
+            <div className="flex-1  flex md:flex-col flex-row  md:gap-8 gap-3 md:pt-5 pt-3 pb-10 md:px-5 px-2    overflow-auto">
               {veryimportant.length === 0 ? (
-                <h2 className="self-center pt-10">まだタスクがありません</h2>
+                <h2 className="self-center px-6 md:px-0 md:pt-10 pt-2 md:text-lg text-sm">
+                  まだタスクがありません
+                </h2>
               ) : (
                 veryimportant.map((task, i) => (
                   <TaskDetail
@@ -67,11 +69,16 @@ const Tasks: React.FC<Tasks> = ({ todosData }) => {
               )}
             </div>
           </div>
-          <div className="bg-orange-200 rounded-md w-1/3 flex flex-col px-10 pt-5 shadow-xl overflow-hidden animate-opacity">
-            <h2 className="text-lg font-bold">重要</h2>
-            <div className="flex-1  flex flex-col gap-8 pt-5 pb-10 px-5   overflow-auto">
+          <div className="bg-orange-200 rounded-md md:w-1/3 w-full flex flex-col pt-5 md:px-10 px-3 animate-opacity">
+            <h2 className="text-lg font-bold">重要 {important.length}</h2>
+            <div
+              className="flex-1  flex md:flex-col flex-row  md:gap-8 gap-3 md:pt-5 pt-3 pb-10 md:px-5 px-2    overflow-auto
+            "
+            >
               {important.length === 0 ? (
-                <h2 className="self-center pt-10">まだタスクがありません</h2>
+                <h2 className="self-center px-6 md:px-0 md:pt-10 pt-2 md:text-lg text-sm ">
+                  まだタスクがありません
+                </h2>
               ) : (
                 important.map((task, i) => (
                   <TaskDetail
@@ -84,11 +91,13 @@ const Tasks: React.FC<Tasks> = ({ todosData }) => {
               )}
             </div>
           </div>
-          <div className="bg-blue-200 w-1/3 rounded-md h-full  flex flex-col px-10 pt-5 shadow-xl  overflow-hidden  animate-opacity    ">
-            <h2 className="text-lg font-bold">普通</h2>
-            <div className="flex-1  flex flex-col gap-8 pt-5 pb-10  px-5  overflow-auto">
+          <div className="bg-blue-200 rounded-md md:w-1/3 w-full flex flex-col pt-5 md:px-10 px-3 animate-opacity">
+            <h2 className="text-lg font-bold">普通 {normal.length}</h2>
+            <div className="flex-1  flex md:flex-col flex-row  md:gap-8 gap-3 md:pt-5 pt-3 pb-10 md:px-5 px-2    overflow-auto">
               {normal.length === 0 ? (
-                <h2 className="self-center pt-10">まだタスクがありません</h2>
+                <h2 className="self-center px-6 md:px-0 md:pt-10 pt-2 md:text-lg text-sm">
+                  まだタスクがありません
+                </h2>
               ) : (
                 normal.map((task, i) => (
                   <TaskDetail

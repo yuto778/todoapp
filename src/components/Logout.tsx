@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { createClient } from "../../lib/client";
 import { useRouter } from "next/navigation";
+import { LogOutIcon } from "lucide-react";
 
 const Logout = () => {
   const router = useRouter();
@@ -18,10 +19,24 @@ const Logout = () => {
   };
 
   return (
-    <Button variant="outline" className="relative" onClick={handleLogout}>
-      ログアウト
-      <Link href={"/login"} className="absolute inset-0 "></Link>
-    </Button>
+    <>
+      <Button
+        variant="outline"
+        className="relative hidden md:block"
+        onClick={handleLogout}
+      >
+        ログアウト
+        <Link href={"/login"} className="absolute inset-0 "></Link>
+      </Button>
+      <Button
+        variant="outline"
+        className="relative block md:hidden"
+        onClick={handleLogout}
+      >
+        <LogOutIcon />
+        <Link href={"/login"} className="absolute inset-0 "></Link>
+      </Button>
+    </>
   );
 };
 

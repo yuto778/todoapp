@@ -18,7 +18,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="h-screen w-screen bg-yellow-200/40 flex flex-row lg:flex-col ">
+      <div className="h-screen w-screen bg-yellow-200/40 flex flex-row md:flex-col ">
         <Bar />
         <Tasks todosData={todos?.data} />
       </div>
