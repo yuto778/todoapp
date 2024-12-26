@@ -143,7 +143,7 @@ const Signup = () => {
                 )}
               />
               <Button type="submit" className="self-center">
-                Submit
+                登録🚀
               </Button>
             </form>
           </Form>

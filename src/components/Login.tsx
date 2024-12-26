@@ -101,7 +101,7 @@ const Login = () => {
               />
 
               <Button type="submit" className="self-center">
-                Submit
+                ログイン
               </Button>
             </form>
           </Form>
