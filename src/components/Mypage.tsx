@@ -17,9 +17,9 @@ const Mypage: React.FC<MypageProps> = ({ data }) => {
   // const [EmailModal, setEmailModal] = useState<boolean>(false);
   return (
     <>
-      <div className="p-10 pb-28 w-full flex-1 flex items-center  flex-col relative ">
-        <BackPage className="top-10 left-10" />
-        <div className="h-full w-1/2 flex flex-col  bg-gray-400/50 shadow-lg rounded-lg  p-10 space-y-16 animate-opacity">
+      <div className=" md:p-10 p-5 pb-28 w-full flex-1 flex items-center  flex-col relative justify-center lg:justify-start overflow-x-hidden ">
+        <BackPage className="top-10 left-5 md:left-10" />
+        <div className=" w-full md:w-1/2 flex flex-col  bg-gray-400/50 shadow-lg rounded-lg  p-5 md:p-10 space-y-16 animate-opacity">
           <h2 className="text-xl font-bold underline underline-offset-4">
             マイページ
           </h2>
@@ -45,7 +45,9 @@ const Mypage: React.FC<MypageProps> = ({ data }) => {
               <h2 className="pl-2 text-xl font-normal">{data?.Email}</h2>
               <div className="bg-gray-400/50 z-20 absolute inset-0"></div>
             </div>
-            <h3 className="self-center">メールアドレスは変更できません！</h3>
+            <h3 className="self-center text-sm md:text-lg lg:text-xl whitespace-nowrap">
+              メールアドレスは変更できません！
+            </h3>
             {/* {EmailModal && (
               <EmailChangeModal
                 close={setEmailModal}

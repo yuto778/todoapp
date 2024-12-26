@@ -30,12 +30,14 @@ const TaskDetail: React.FC<taskdetailprops> = ({ id, className, task }) => {
       <div
         key={id}
         className={cn(
-          "w-full flex  items-center justify-center rounded-lg min-h-24 min-w-32 md:w-full  hover:scale-105 transition cursor-pointer shadow-lg hover:shadow-none relative animate-slide-in-left",
+          " flex  items-center justify-center rounded-lg min-h-24  min-w-40 md:w-full  hover:scale-105 transition cursor-pointer shadow-lg hover:shadow-none relative animate-slide-in-left",
           className
         )}
         onClick={modalopen}
       >
-        <h2 className="text-sm md:text-base">{task.title}</h2>
+        <h2 className="text-sm lg:text-base md:text-sm truncate">
+          {task.title}
+        </h2>
         <h4 className="absolute md:bottom-3 md:right-5 bottom-2 right-2 md:text-base text-xs text-gray-600/70">
           {task.due_date}
         </h4>

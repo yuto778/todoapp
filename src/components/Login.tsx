@@ -56,7 +56,7 @@ const Login = () => {
   return (
     <>
       <main className="flex-1 flex items-center justify-center py-16">
-        <div className="flex flex-col   w-1/2 rounded-lg bg-slate-400/50 space-y-10 px-5 py-10">
+        <div className="flex flex-col  w-3/4  md:w-1/2 rounded-lg bg-slate-400/50 space-y-10 px-5 py-10">
           <Form {...LogInUpform}>
             <form
               onSubmit={LogInUpform.handleSubmit(LogInonSubmit)}
@@ -70,7 +70,11 @@ const Login = () => {
                   <FormItem>
                     <FormLabel>メールアドレス</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} type="email" />
+                      <Input
+                        placeholder="todos@gmail.com"
+                        {...field}
+                        type="email"
+                      />
                     </FormControl>
 
                     <FormMessage />
@@ -84,7 +88,11 @@ const Login = () => {
                   <FormItem>
                     <FormLabel>パスワード</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} type="password" />
+                      <Input
+                        placeholder="Todos778"
+                        {...field}
+                        type="password"
+                      />
                     </FormControl>
 
                     <FormMessage />

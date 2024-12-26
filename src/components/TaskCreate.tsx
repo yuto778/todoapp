@@ -71,13 +71,16 @@ const TaakCreate: React.FC<TaskCreateProps> = ({ user }) => {
   };
   return (
     <>
-      <main className="p-10 w-full flex-1 flex items-center  flex-col relative ">
-        <BackPage className={"top-10 left-10 "} />
-        <div className="h-full w-1/2 flex flex-col  bg-slate-400/50 shadow-lg rounded-lg  p-10 space-y-10 animate-opacity">
+      <main
+        className="p-10 w-full flex-1 flex items-center  flex-col relative overflow-hidden justify-center lg:justify-start
+      "
+      >
+        <BackPage className={"top-10 left-5 md:left-10  "} />
+        <div className=" md:h-auto  w-full md:w-1/2 flex flex-col  bg-slate-400/50 shadow-lg rounded-lg  p-5 lg:p-10 space-y-10 animate-opacity">
           <Form {...TaskCreateform}>
             <form
               onSubmit={TaskCreateform.handleSubmit(TaskCreateonSubmit)}
-              className="space-y-10 flex flex-col"
+              className="space-y-5 md:space-y-10 flex flex-col"
             >
               <h2 className="font-bold text-xl">新規登録</h2>
               <FormField
@@ -85,26 +88,28 @@ const TaakCreate: React.FC<TaskCreateProps> = ({ user }) => {
                 name="title"
                 render={({ field }) => (
                   <FormItem className="flex flex-col ">
-                    <FormLabel className="text-xl ">タスク名</FormLabel>
+                    <FormLabel className="text-lg md:text-xl ">
+                      タスク名
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} />
+                      <Input placeholder="部屋の掃除" {...field} />
                     </FormControl>
 
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <div className="flex w-full items-center gap-5">
+              <div className="flex w-full flex-col md:flex-row items-center gap-5">
                 <FormField
                   control={TaskCreateform.control}
                   name="due_date"
                   render={({ field }) => (
-                    <FormItem className="w-1/2 ">
-                      <FormLabel className="text-xl">期日</FormLabel>
+                    <FormItem className="md:w-1/2 w-full ">
+                      <FormLabel className="text-lg md:text-xl">期日</FormLabel>
                       <FormControl>
                         <Input
                           type="date"
-                          placeholder="shadcn"
+                          placeholder=""
                           value={field.value || ""}
                           onChange={(e) => field.onChange(e.target.value)}
                         />
@@ -118,14 +123,16 @@ const TaakCreate: React.FC<TaskCreateProps> = ({ user }) => {
                   control={TaskCreateform.control}
                   name="priority"
                   render={({ field }) => (
-                    <FormItem className="flex flex-col w-1/2">
-                      <FormLabel className="text-xl">重要度</FormLabel>
+                    <FormItem className="flex flex-col md:w-1/2 w-full">
+                      <FormLabel className="text-lg md:text-xl">
+                        重要度
+                      </FormLabel>
                       <FormControl>
                         <Select {...field} onValueChange={field.onChange}>
                           <SelectTrigger className="">
                             <SelectValue placeholder="" />
                           </SelectTrigger>
-                          <SelectContent className="text-xl">
+                          <SelectContent className="text-lg md:text-xl">
                             <SelectGroup>
                               <SelectItem value="normal">普通</SelectItem>
                               <SelectItem value="important">重要</SelectItem>
@@ -148,7 +155,7 @@ const TaakCreate: React.FC<TaskCreateProps> = ({ user }) => {
                 name="memo"
                 render={({ field }) => (
                   <FormItem className="flex flex-col">
-                    <FormLabel className="text-xl">メモ</FormLabel>
+                    <FormLabel className="text-lg md:text-xl">メモ</FormLabel>
                     <FormControl>
                       <Input placeholder="shadcn" {...field} />
                     </FormControl>

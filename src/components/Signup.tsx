@@ -67,7 +67,7 @@ const Signup = () => {
   return (
     <>
       <main className="flex-1 flex items-center justify-center ">
-        <div className="flex flex-col w-1/2 rounded-lg bg-slate-400/50 space-y-5 px-10 py-10">
+        <div className="flex flex-col w-3/4 md:w-1/2  rounded-lg bg-slate-400/50 space-y-5 px-10 py-10">
           <Form {...SignUpform}>
             <form
               onSubmit={SignUpform.handleSubmit(SignUponSubmit)}
@@ -81,7 +81,7 @@ const Signup = () => {
                   <FormItem>
                     <FormLabel>ユーザーネーム</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} />
+                      <Input placeholder="トゥードゥーズ" {...field} />
                     </FormControl>
 
                     <FormMessage />
@@ -95,7 +95,11 @@ const Signup = () => {
                   <FormItem>
                     <FormLabel>メールアドレス</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} type="email" />
+                      <Input
+                        placeholder="todos@gmail.com"
+                        {...field}
+                        type="email"
+                      />
                     </FormControl>
 
                     <FormMessage />
@@ -109,7 +113,11 @@ const Signup = () => {
                   <FormItem>
                     <FormLabel>パスワード</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} type="password" />
+                      <Input
+                        placeholder="Todos778"
+                        {...field}
+                        type="password"
+                      />
                     </FormControl>
 
                     <FormMessage />
@@ -123,7 +131,11 @@ const Signup = () => {
                   <FormItem>
                     <FormLabel>確認用パスワード</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} type="password" />
+                      <Input
+                        placeholder="Todos778"
+                        {...field}
+                        type="password"
+                      />
                     </FormControl>
 
                     <FormMessage />
@@ -135,7 +147,10 @@ const Signup = () => {
               </Button>
             </form>
           </Form>
-          <Link href={"/login"} className="self-center">
+          <Link
+            href={"/login"}
+            className="self-center underline underline-offset-2 text-black/60"
+          >
             ログインはこちら
           </Link>
         </div>

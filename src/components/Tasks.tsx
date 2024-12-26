@@ -50,9 +50,9 @@ const Tasks: React.FC<Tasks> = ({ todosData }) => {
         </div>
 
         <div className="flex-1 flex-col flex md:flex-row w-full pt-5 pb-10 md:gap-10 space-y-16 md:space-y-0  overflow-hidden ">
-          <div className="bg-red-200 rounded-md md:w-1/3 w-full flex flex-col pt-5 md:px-10 px-3 animate-opacity">
+          <div className="bg-red-200 rounded-md md:w-1/3 w-full flex flex-col pt-5 md:px-6 lg:px-10  px-3 animate-opacity">
             <h2 className="text-lg font-bold">最重要 {veryimportant.length}</h2>
-            <div className="flex-1  flex md:flex-col flex-row  md:gap-8 gap-3 md:pt-5 pt-3 pb-10 md:px-5 px-2    overflow-auto">
+            <div className="flex-1  flex md:flex-col flex-row  md:gap-8 gap-3 md:pt-5 px-2 pt-4 pb-5   lg:px-5 md:px-0 overflow-x-auto">
               {veryimportant.length === 0 ? (
                 <h2 className="self-center px-6 md:px-0 md:pt-10 pt-2 md:text-lg text-sm">
                   まだタスクがありません
