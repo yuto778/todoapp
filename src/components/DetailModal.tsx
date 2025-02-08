@@ -67,13 +67,14 @@ const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
     try {
       const completeCheck = await TaskCompleteFunction(task.id);
 
-      if (completeCheck.success === true) {
+      if (completeCheck.success === false) {
         toast.error("エラーが発生しました", { id: loadingId });
       }
 
       toast.success("成功したよ", { id: loadingId });
 
       await delay(1500);
+      router.prefetch("/");
 
       close(false);
       router.refresh();
@@ -135,7 +136,7 @@ const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
                     <FormLabel className="text-xl ">タスク名</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="shadcn"
+                        placeholder="部屋の掃除"
                         {...field}
                         disabled={Fixedtodo ? false : true}
                       />
@@ -155,7 +156,8 @@ const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
                       <FormControl>
                         <Input
                           type="date"
-                          placeholder="shadcn"
+                          placeholder="2025年1月10日
+                          "
                           value={field.value || ""}
                           disabled={Fixedtodo ? false : true}
                           onChange={(e) => field.onChange(e.target.value)}
@@ -176,7 +178,7 @@ const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
                     <FormLabel className="text-xl">メモ</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="shadcn"
+                        placeholder="隅々まで"
                         {...field}
                         disabled={Fixedtodo ? false : true}
                       />
