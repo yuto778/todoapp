@@ -20,12 +20,22 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
 
-const SignupformSchema = z.object({
-  username: z.string().min(2).max(50),
-  Email: z.string().email(),
-  FirstPassword: z.string().min(6).max(24),
-  SecondPassword: z.string().min(6).max(24),
-});
+const SignupformSchema = z
+  .object({
+    username: z.string().min(2).max(50),
+    Email: z.string().email(),
+    FirstPassword: z.string().min(6).max(24),
+    SecondPassword: z.string().min(6).max(24),
+  })
+  .superRefine((data, ctx) => {
+    if (data.FirstPassword !== data.SecondPassword) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "パスワードが一致しません",
+        path: ["SecondPassword"],
+      });
+    }
+  });
 
 export type SignUpFormSchemaType = z.infer<typeof SignupformSchema>;
 
@@ -137,8 +147,9 @@ const Signup = () => {
                         type="password"
                       />
                     </FormControl>
-
-                    <FormMessage />
+                    <div className="min-h-[20px]">
+                      <FormMessage />
+                    </div>
                   </FormItem>
                 )}
               />

@@ -157,7 +157,7 @@ const TaakCreate: React.FC<TaskCreateProps> = ({ user }) => {
                   <FormItem className="flex flex-col">
                     <FormLabel className="text-lg md:text-xl">メモ</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} />
+                      <Input placeholder="隅々まで" {...field} />
                     </FormControl>
 
                     <FormMessage />
@@ -165,7 +165,7 @@ const TaakCreate: React.FC<TaskCreateProps> = ({ user }) => {
                 )}
               />
               <Button type="submit" className="self-center">
-                Submit
+                登録
               </Button>
             </form>
           </Form>

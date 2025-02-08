@@ -90,7 +90,7 @@ const EmailChangeModal: React.FC<EmailChangeModalProps> = ({
                   <FormItem>
                     <FormLabel>ユーザーネーム</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} />
+                      <Input placeholder="yuto778" {...field} />
                     </FormControl>
 
                     <FormMessage />

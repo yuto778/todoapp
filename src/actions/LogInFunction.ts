@@ -15,11 +15,11 @@ export const LogInFunction = async (values: LogInFormSchemaType) => {
       password: values.Password,
     });
 
-    if (LoginError) throw LoginError;
+    if (LoginError) return { success: false, data: user };
 
     console.log(user);
 
-    return { data: user };
+    return { success: true, data: user };
   } catch (error) {
     console.log(error);
   }

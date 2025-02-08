@@ -90,7 +90,7 @@ const UserNameChangeModal: React.FC<UserNameChangeModalProps> = ({
                   <FormItem>
                     <FormLabel>ユーザーネーム</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} />
+                      <Input placeholder="yuto778" {...field} />
                     </FormControl>
 
                     <FormMessage />
