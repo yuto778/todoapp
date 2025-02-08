@@ -75,8 +75,8 @@ const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
 
       await delay(1500);
 
-      router.refresh();
       close(false);
+      router.refresh();
     } catch (error) {
       toast.error("エラーが発生しました", { id: loadingId });
       console.log(error);
