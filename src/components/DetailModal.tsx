@@ -74,10 +74,9 @@ const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
       toast.success("成功したよ", { id: loadingId });
 
       await delay(1500);
-      router.prefetch("/");
 
-      close(false);
       router.refresh();
+      close(false);
     } catch (error) {
       toast.error("エラーが発生しました", { id: loadingId });
       console.log(error);
