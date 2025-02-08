@@ -19,6 +19,8 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
+import { useEffect, useState } from "react";
+import { Eye } from "lucide-react";
 
 const SignupformSchema = z
   .object({
@@ -41,6 +43,39 @@ export type SignUpFormSchemaType = z.infer<typeof SignupformSchema>;
 
 const Signup = () => {
   const router = useRouter();
+  const [showFirstPassword, setShowFirstPassword] = useState(false);
+  const [showSecondPassword, setShowSecondPassword] = useState(false);
+  const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timerId) clearTimeout(timerId);
+    };
+  }, [timerId]);
+
+  const showFirstpassword = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    // 既存のタイマーをクリア
+    if (timerId) clearTimeout(timerId);
+    setShowFirstPassword(true);
+    // 新しいタイマーを設定
+    const newTimerId = setTimeout(() => {
+      setShowFirstPassword(false);
+    }, 1500);
+    setTimerId(newTimerId);
+  };
+
+  const showSecondpassword = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    // 既存のタイマーをクリア
+    if (timerId) clearTimeout(timerId);
+    setShowSecondPassword(true);
+    // 新しいタイマーを設定
+    const newTimerId = setTimeout(() => {
+      setShowSecondPassword(false);
+    }, 1500);
+    setTimerId(newTimerId);
+  };
 
   const SignUpform = useForm<SignUpFormSchemaType>({
     resolver: zodResolver(SignupformSchema),
@@ -123,11 +158,21 @@ const Signup = () => {
                   <FormItem>
                     <FormLabel>パスワード</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="Todos778"
-                        {...field}
-                        type="password"
-                      />
+                      <div className="relative">
+                        <Input
+                          placeholder="Todos778"
+                          {...field}
+                          type={showFirstPassword ? "text" : "password"}
+                          className="pr-10"
+                        />
+                        <Button
+                          variant={"ghost"}
+                          className="absolute right-0 top-0"
+                          onClick={showFirstpassword}
+                        >
+                          <Eye size={24} />
+                        </Button>
+                      </div>
                     </FormControl>
 
                     <FormMessage />
@@ -141,11 +186,21 @@ const Signup = () => {
                   <FormItem>
                     <FormLabel>確認用パスワード</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="Todos778"
-                        {...field}
-                        type="password"
-                      />
+                      <div className="relative">
+                        <Input
+                          placeholder="Todos778"
+                          {...field}
+                          type={showSecondPassword ? "text" : "password"}
+                          className="pr-10"
+                        />
+                        <Button
+                          variant={"ghost"}
+                          className="absolute right-0 top-0"
+                          onClick={showSecondpassword}
+                        >
+                          <Eye size={24} />
+                        </Button>
+                      </div>
                     </FormControl>
                     <div className="min-h-[20px]">
                       <FormMessage />
