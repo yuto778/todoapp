@@ -41,7 +41,7 @@ type DetailProps = {
 const DetailModalformSchema = z.object({
   title: z.string().min(2).max(50),
   due_date: z.string().refine((val) => !isNaN(Date.parse(val)), {
-    message: "Invalid date format",
+    message: "無効な形式です",
   }),
   memo: z.string(),
 });
@@ -69,6 +69,7 @@ const DetailModal: React.FC<DetailProps> = ({ close, task }) => {
 
       if (completeCheck.success === false) {
         toast.error("エラーが発生しました", { id: loadingId });
+        return;
       }
 
       toast.success("成功したよ", { id: loadingId });

@@ -14,6 +14,9 @@ const BackPage: React.FC<BackPageProps> = ({ className }) => {
 
   const back = () => {
     router.back();
+    setTimeout(() => {
+      router.refresh();
+    }, 100);
   };
   return (
     <>

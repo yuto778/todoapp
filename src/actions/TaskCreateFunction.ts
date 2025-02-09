@@ -3,6 +3,8 @@
 import { TaskCreateFormSchemaType } from "@/components/TaskCreate";
 import { createClient } from "../../lib/server";
 
+import { revalidatePath } from "next/cache";
+
 export const TaskCreateFunction = async (
   values: TaskCreateFormSchemaType,
   userId: string
@@ -32,6 +34,8 @@ export const TaskCreateFunction = async (
     }
 
     console.log("タスクの登録に成功しました");
+    revalidatePath("/");
+
     return { success: true, message: "成功です" };
   } catch (error) {
     console.log(error);
